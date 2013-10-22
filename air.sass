@@ -8,17 +8,6 @@ $margin-base-vertical:  $font-size-base/2!default
 $margin-base-horizontal: $font-size-base/2!default
 
 
-.mb-#{$margin-base-vertical}
-  margin-bottom: $margin-base-vertical+px
-
-.mb-#{$margin-base-vertical*2}
-  margin-bottom: $margin-base-vertical*2+px
-
-.mb-#{$margin-base-vertical*3}
-  margin-bottom: $margin-base-vertical*3+px
-
-.mb-#{$margin-base-vertical*4}
-  margin-bottom: $margin-base-vertical*4+px
-
-.mb-#{$margin-base-vertical*5}
-  margin-bottom: $margin-base-vertical*5+px
+@for $i from 1 through 5
+  .mb-#{$margin-base-vertical * $i}
+    margin-bottom: $margin-base-vertical*$i+px
