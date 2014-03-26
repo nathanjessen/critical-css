@@ -1,0 +1,26 @@
+/**
+ * Sass Mixins
+ */
+
+// Slightly modified from
+// https://zoerooney.com/blog/web-development/clean-sticky-footer-sass-mixin/
+// http://css-tricks.com/snippets/css/sticky-footer/
+@mixin sticky-footer($footer-height, $wrapper-selector: unquote("#wrapper"), $footer-selector: unquote("#footer")) {
+  html, body {
+    height: 100%;
+  }
+  body {
+  	margin: 0;
+  	padding: 0;
+  }
+  #{$wrapper-selector} {
+    min-height: 100%;
+    height: 100%;
+    margin-bottom: -$footer-height;
+    padding-bottom: $footer-height;
+  }
+  #{$wrapper-selector}:after,
+  #{$footer-selector} {
+    height: $footer-height;
+  }
+}

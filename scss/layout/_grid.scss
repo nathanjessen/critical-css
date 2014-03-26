@@ -1,0 +1,50 @@
+/**
+ * Grid System
+ */
+
+
+.container {
+	@extend %cf;
+}
+
+@media (min-width: 640px) {
+	.wrap {
+		margin: 0 auto;
+		width: 640px;
+	}
+}
+
+.wrap {
+	padding: 0 15px;
+}
+
+/* Grid
+-------------------------------------------------------------- */
+.column {
+	float: left;
+	margin-left: 5%;
+}
+
+.column:first-child {
+	margin-left: 0;
+}
+
+.column.full {
+	width: 100%;
+}
+
+.column.two-thirds {
+	width: 65%;
+}
+
+.column.half {
+	width: 47.5%;
+}
+
+.column.one-third {
+	width: 30%;
+}
+
+.column.one-fourth {
+	width: 21.25%;
+}

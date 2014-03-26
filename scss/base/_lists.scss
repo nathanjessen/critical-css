@@ -1,0 +1,15 @@
+/*
+ * Lists
+ */
+
+@media (min-width: 640px) {
+	.inline-list li {
+		float: left;
+	}
+}
+
+.no-disc {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}

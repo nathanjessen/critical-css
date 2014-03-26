@@ -1,7 +1,7 @@
 //
 // Import Compass
 //
-@import "compass";
+// @import "compass";
 
 
 //
@@ -16,8 +16,8 @@ $margin-base-horizontal: $font-size-base/2!default;
 $variations: 8;
 
 @while $variations > 0 {
-  .mb-#{$margin-base-vertical * $variations} {
-    margin-bottom: $margin-base-vertical*$variations+px;
+  .mb-#{$variations} {
+    margin-bottom: $variations+px;
   }
   $variations: $variations - 1;
 }
@@ -38,4 +38,15 @@ $variations: 8;
 .btn-green {
   @extend .btn;
   background: green;
+}
+
+/////////////////////////////
+// Components
+/////////////////////////////
+
+// Buttons
+// @import "components/buttons";
+
+body {
+  background: red!important;
 }

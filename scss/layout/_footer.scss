@@ -1,0 +1,5 @@
+/**
+ * Footer
+ */
+
+@include sticky-footer($footer-height, '.page-wrap', '.site-footer');

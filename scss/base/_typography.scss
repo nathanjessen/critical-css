@@ -1,0 +1,19 @@
+/**
+ * Typography rules and @font-face
+ */
+
+
+a, a:focus, a:visited {
+	color: #2980b9;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #3498db;
+	text-decoration: underline;
+}
+
+.block-links a {
+	color: #fff;
+	display: block;
+}
