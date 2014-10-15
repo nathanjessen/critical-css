@@ -1,0 +1,12 @@
+
+.panel {
+	padding: $panel-padding;
+
+	@each $modifier, $color in $brand-colors {
+		&--#{$modifier} {
+			background: $color;
+			border-bottom: 8px solid lighten($color, 12);
+			color: $white;
+		}
+	}
+}

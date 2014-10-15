@@ -1,0 +1,16 @@
+/**
+ * Margins
+ */
+
+$margin-variations: 5;
+$margin-width: 5;
+
+@while $margin-variations > 0 {
+	$margin: $margin-width * $margin-variations;
+
+	.mb-#{$margin} {
+		margin-bottom: $margin + px;
+	}
+
+	$margin-variations: $margin-variations - 1;
+}

@@ -17,3 +17,10 @@ a:hover {
 	color: #fff;
 	display: block;
 }
+
+$font-directory: '../';
+$font-name: 'ProximaNova';
+$versions: 'Regular','Light','Bold','Semibold';
+// @each $version in $versions {
+// 	@include font($font-directory, $font-name+'-'+$version);
+// }
