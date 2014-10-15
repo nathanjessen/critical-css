@@ -32,7 +32,7 @@
 }
 
 @mixin breakpoint($start, $end: 0px) {
-  @if $end &gt; 0px {
+  @if $end > 0px {
     @media only screen and
       (min-width: convertBreakpoint($start)) and
       (max-width: convertBreakpoint($end) - 1)
