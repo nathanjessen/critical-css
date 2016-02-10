@@ -1,0 +1,52 @@
+//== Grid container
+//
+@mixin container {
+  padding: 0 40px;
+}
+
+//== Grid rows
+//
+@mixin grid-row {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+//== Grid cells
+//
+@mixin grid-col {
+  position: relative;
+  min-height: 1px;
+  flex: 1 0 auto;
+}
+
+@mixin make-grid-columns($columns: $grid-columns, $gutter: $grid-gutter-width, $breakpoints: $grid-breakpoints) {
+  @each $breakpoint in map-keys($breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+      // Work around cross-media @extend (https://github.com/sass/sass/issues/1050)
+      %grid-column-float-#{$breakpoint} {
+        float: left;
+      }
+      @for $i from 1 through $columns {
+        .col-#{$breakpoint}-#{$i} {
+          @if not $enable-flex {
+            @extend %grid-column-float-#{$breakpoint};
+          }
+          @include make-col-span($i, $columns);
+        }
+      }
+      @each $modifier in (pull, push, offset) {
+        @for $i from 0 through $columns {
+          .#{$modifier}-#{$breakpoint}-#{$i} {
+            @include make-col-modifier($modifier, $i, $columns)
+          }
+        }
+      }
+    }
+  }
+}
+
+//== Layout template 1
+//
+@mixin template-1 {
+
+}

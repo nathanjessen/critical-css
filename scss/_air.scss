@@ -1,15 +1,6 @@
-@charset "UTF-8";
-/**
- * Primary Sass file
- * sass --watch air.scss:air.min.css --style compressed
- */
-
-// Site:    https://github.com/nathanjessen/Air
-// Author:  Nathan Jessen
-
 // Contents:
 
-// 01. Utilities ( COMPASS, Variables, Functions, Mixins, etc... )
+// 01. Utilities ( Variables, Functions, Mixins, etc... )
 // 02. Libraries
 // 03. Base ( regular elements )
 // 04. Layout ( layout template, grid structure )
@@ -26,11 +17,12 @@
 // Lib
 // import third-party dependencies
 /////////////////////////////
-@import "helpers/lib";
+@import "vendor/include-media";
 @import "helpers/variables";
 @import "helpers/functions";
 @import "helpers/mixins";
 @import "helpers/breakpoint";
+@import "helpers/hyphenate";
 @import "helpers/animations";
 @import "helpers/helpers";
 
@@ -38,10 +30,22 @@
 /////////////////////////////
 // Base
 /////////////////////////////
-@import "base/reset";
-@import "base/base";
-@import "base/lists";
-@import "base/typography";
+@import "settings/reset";
+@import "settings/base";
+@import "settings/lists";
+@import "settings/typography";
+@import "settings/site.variables";
+@import "settings/buttons.mixins";
+@import "settings/buttons.variables";
+@import "settings/colors.variables";
+@import "settings/grid.mixins";
+@import "settings/grid.variables";
+
+
+/////////////////////////////
+// Layout
+/////////////////////////////
+@import "objects/buttons";
 
 
 /////////////////////////////
@@ -51,8 +55,8 @@
 @import "layout/forms";
 @import "layout/grid";
 @import "layout/header";
-@import "layout/sidebar";
 @import "layout/margins";
+@import "layout/sidebar";
 
 
 /////////////////////////////
@@ -69,6 +73,12 @@
 @import "components/social";
 @import "components/thumbnails";
 @import "components/tooltips";
+
+
+/////////////////////////////
+// States
+/////////////////////////////
+@import "trumps/hidden";
 
 
 /////////////////////////////

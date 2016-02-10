@@ -1,3 +1,15 @@
 /**
  * Navigation
  */
+.navigation {
+	background-color: $brand-primary;
+	padding: 20px;
+
+	@include media(">=phone", "screen") {
+		padding: 40px;
+	}
+
+	@include media("print") {
+		display: none !important;
+	}
+}

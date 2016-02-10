@@ -1,0 +1,16 @@
+{
+  "name": "css-framework",
+  "description": "The CSS Framework.",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=0.10.1"
+  },
+  "devDependencies": {
+    "node-sass": "3.4.2",
+    "nodemon": "1.8.1"
+  },
+  "scripts": {
+    "build-css": "node-sass --include-path scss scss/default.scss public/css/default.css",
+    "watch-css": "nodemon -e scss -x 'npm run build-css'"
+  }
+}
