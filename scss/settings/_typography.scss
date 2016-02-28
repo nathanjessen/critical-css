@@ -22,6 +22,21 @@ h6 {
 	margin-top: 1em;
 }
 
+a, a:focus, a:visited {
+	color: #2980b9;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #3498db;
+	text-decoration: underline;
+}
+
+.block-links a {
+	color: #fff;
+	display: block;
+}
+
 .c-heading-page {
 	font-size: rem(24);
 }
@@ -39,21 +54,6 @@ h6 {
 
 .c-heading-section {
 	font-size: rem(18);
-}
-
-a, a:focus, a:visited {
-	color: #2980b9;
-	text-decoration: none;
-}
-
-a:hover {
-	color: #3498db;
-	text-decoration: underline;
-}
-
-.block-links a {
-	color: #fff;
-	display: block;
 }
 
 $font-directory: '../';

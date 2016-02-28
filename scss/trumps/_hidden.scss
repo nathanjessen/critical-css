@@ -1,23 +1,21 @@
 .hidden {
 	display: none !important;
 
-}
-
-@include media(">=sm") {
-	.hidden-sm {
-		display: none !important;
+	&-sm {
+		@include media(">=sm") {
+			display: none !important;
+		}
 	}
-}
 
-
-@include media(">=md") {
-	.hidden-md {
-		display: none !important;
+	&-md {
+		@include media(">=md") {
+			display: none !important;
+		}
 	}
-}
 
-@include media(">=lg") {
-	.hidden-lg {
-		display: none !important;
+	&-lg {
+		@include media(">=lg") {
+			display: none !important;
+		}
 	}
 }
