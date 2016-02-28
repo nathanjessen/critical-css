@@ -1,23 +1,23 @@
-.u-hidden {
+.hidden {
 	display: none !important;
 
 }
 
-@include media(">=phone") {
-	.u-hidden\@phone {
+@include media(">=sm") {
+	.hidden-sm {
 		display: none !important;
 	}
 }
 
 
-@include media(">=tablet") {
-	.u-hidden\@tablet {
+@include media(">=md") {
+	.hidden-md {
 		display: none !important;
 	}
 }
 
-@include media(">=desktop") {
-	.u-hidden\@desktop {
+@include media(">=lg") {
+	.hidden-lg {
 		display: none !important;
 	}
 }

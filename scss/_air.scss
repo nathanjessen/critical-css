@@ -1,40 +1,31 @@
 // Contents:
 
-// 01. Utilities ( Variables, Functions, Mixins, etc... )
-// 02. Libraries
-// 03. Base ( regular elements )
-// 04. Layout ( layout template, grid structure )
-// 05. Modules ( modules, background, colors, typography.. )
-// 06. States
-// 07. @font-face
-// 08. Print
-// 09. Shame
+// 01. Vendor Libraries (third-party dependencies)
+// 02. Settings (variables, functions, mixins, etc...)
+// 03. Base (regular elements)
+// 04. Objects (common reusable patterns)
+// 05. Layout (layout template, grid structure)
+// 06. Components (commonly created components)
+// 07. Trumps (utility classes that have a single specific behavior)
+// 08. States (print, JS induced, touch)
+// 09. @font-face
 
 
 
 /////////////////////////////
-// Helpers
-// Lib
-// import third-party dependencies
+// Vendor Libraries
 /////////////////////////////
 @import "vendor/include-media";
-@import "helpers/variables";
-@import "helpers/functions";
-@import "helpers/mixins";
-@import "helpers/breakpoint";
-@import "helpers/hyphenate";
-@import "helpers/animations";
-@import "helpers/helpers";
 
 
 /////////////////////////////
-// Base
+// Settings
 /////////////////////////////
 @import "settings/reset";
-@import "settings/base";
-@import "settings/lists";
-@import "settings/typography";
 @import "settings/site.variables";
+@import "settings/px-to-rems.functions";
+@import "settings/typography.mixins";
+@import "settings/typography";
 @import "settings/buttons.mixins";
 @import "settings/buttons.variables";
 @import "settings/colors.variables";
@@ -43,19 +34,30 @@
 
 
 /////////////////////////////
-// Layout
+// Base
 /////////////////////////////
+// @import "base/base";
+
+
+/////////////////////////////
+// Objects
+/////////////////////////////
+@import "objects/animations";
 @import "objects/buttons";
+@import "objects/clearfix";
+@import "objects/hyphenate";
+@import "objects/lists";
+@import "objects/media";
 
 
 /////////////////////////////
 // Layout
 /////////////////////////////
+@import "layout/container";
 @import "layout/footer";
 @import "layout/forms";
 @import "layout/grid";
 @import "layout/header";
-@import "layout/margins";
 @import "layout/sidebar";
 
 
@@ -66,7 +68,6 @@
 @import "components/carousel";
 @import "components/cover";
 @import "components/dropdown";
-@import "components/media";
 @import "components/modal";
 @import "components/navigation";
 @import "components/panels";
@@ -76,9 +77,13 @@
 
 
 /////////////////////////////
-// States
+// Trumps
 /////////////////////////////
+@import "trumps/background";
+@import "trumps/font-weight";
 @import "trumps/hidden";
+@import "trumps/margin";
+@import "trumps/padding";
 
 
 /////////////////////////////

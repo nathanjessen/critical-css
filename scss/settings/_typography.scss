@@ -1,7 +1,45 @@
 /**
- * Typography rules and @font-face
+ * Typography
  */
+html {
+	font-size: 1em;
+}
 
+body {
+	font-family: map-get($theme-settings, font-family);
+	margin: 0;
+	padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: rem(24);
+	margin-bottom: 1em;
+	margin-top: 1em;
+}
+
+.c-heading-page {
+	font-size: rem(24);
+}
+
+.c-heading-main {
+	font-size: rem(24);
+}
+.c-heading-sub {
+	font-size: rem(16);
+}
+
+.c-heading-banner {
+	font-size: rem(32);
+}
+
+.c-heading-section {
+	font-size: rem(18);
+}
 
 a, a:focus, a:visited {
 	color: #2980b9;

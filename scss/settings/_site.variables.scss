@@ -1,1 +1,94 @@
+/**
+ * Sass Variables
+ */
+
 $namespace: "spr";
+
+
+$path-root: '/public/';
+$path-css: $path-root + 'css/';
+$path-js: $path-root + 'js/';
+$path-fonts: $path-root + 'fonts/';
+$path-img: $path-root + 'images/';
+$path-svg: $path-img + 'svg/';
+$path-icons: $path-svg + 'svg_iconset/';
+
+
+// Typography
+$em-base: 16px !default;
+$em-base: 16; // Remove after figuring out issue with unitless()
+
+
+// Layout
+$breakpoints: (
+  sm: 35.5em, // 568px
+  md: 48em, // 768px
+  lg: 64em, // 1024px
+  xl: 80em // 1280px
+);
+
+
+// Colors
+$white: #fff;
+$black: #000;
+$green-flat: #1bbc9b;
+$blue-flat: #3498db;
+$teal-flat: #389ebc;
+$red-flat: #e96151;
+
+
+// Brand Colors as a Sass Map
+$brand-colors: (
+	primary: $green-flat,
+	secondary: $blue-flat,
+	tertiary: $teal-flat,
+	quaternary: $red-flat,
+	quinary: $red-flat
+);
+
+
+// Brand Colors as variable declarations
+$brand-primary: map-get($brand-colors, primary);
+$brand-secondary: map-get($brand-colors, secondary);
+$brand-tertiary: map-get($brand-colors, tertiary);
+$brand-quaternary: map-get($brand-colors, quaternary);
+$brand-quinary: map-get($brand-colors, quinary);
+
+
+// Font-weights
+$font-weights: (
+  light: 300,
+  normal: 400,
+  medium: 500,
+  semibold: 600,
+  bold: 700,
+  black: 900
+);
+
+// Font-weight variables created from $font-weights map
+// Use these variables when defining font-weights so they can be easily maintained
+$font-light: map-get($font-weights, light);
+$font-normal: map-get($font-weights, normal);
+$font-medium: map-get($font-weights, medium);
+$font-semibold: map-get($font-weights, semibold);
+$font-bold: map-get($font-weights, bold);
+$font-black: map-get($font-weights, black);
+
+
+
+
+// Theme colors
+$theme-colors: (
+	background: smoke,
+	color: #bada55,
+	font-family: Helvetica
+);
+
+// Theme typography
+$theme-type: (
+	font-family: Arial,
+	font-size: $em-base
+);
+
+// Theme Sass map with all settings
+$theme-settings: map-merge($theme-colors, $theme-type);

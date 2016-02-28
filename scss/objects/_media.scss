@@ -1,0 +1,35 @@
+/**
+ * Media
+ */
+
+.o-media {
+  @extend %cf;
+
+}
+
+.o-media__figure {
+  > img {
+    display: block;
+
+    @include media(">=sm") {
+      margin: 0 auto;
+    }
+  }
+
+  @include media(">=sm") {
+    float: left;
+    margin-right: 10px;
+  }
+}
+
+.o-media__figure--reverse {
+  @include media(">=sm") {
+    float: right;
+    margin-left: 10px;
+    margin-right: 0;
+  }
+}
+
+.o-media__body {
+
+}

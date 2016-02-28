@@ -1,6 +1,6 @@
 
 .panel {
-	padding: $panel-padding;
+	padding: 40px 0;
 
 	@each $modifier, $color in $brand-colors {
 		&--#{$modifier} {

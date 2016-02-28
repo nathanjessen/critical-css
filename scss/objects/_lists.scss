@@ -2,13 +2,13 @@
  * Lists
  */
 
-@media (min-width: 640px) {
-	.inline-list li {
+.o-inline-list li {
+	@include media(">=sm") {
 		float: left;
 	}
 }
 
-.no-disc {
+.o-no-disc {
 	list-style: none;
 	margin: 0;
 	padding: 0;

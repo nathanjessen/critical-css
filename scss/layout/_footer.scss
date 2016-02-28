@@ -2,27 +2,6 @@
  * Footer
  */
 
-@if $use-sticky-footer == true {
-
-	@include sticky-footer($footer-height, '.page-wrap', '.site-footer');
-
-}
-@elseif $use-sticky-footer == "yes" {
-	.site-footer {
-		height: $footer-height;
-		content: "yes";
-	}
-}
-@else {
-	.site-footer {
-		height: 20px;
-	}
-}
-
-@for $i from 1 through 10 {
-	@if $i % 2 == 0 {
-		.arrow-#{$i}{
-			content: #{$i};
-		}
-	}
+footer {
+	display: block;
 }
