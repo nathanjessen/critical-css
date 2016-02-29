@@ -18,6 +18,7 @@ $path-icons: $path-svg + 'svg_iconset/';
 $em-base: 16px !default;
 $em-base: 16; // Remove after figuring out issue with unitless()
 
+$base-font-size: 16px !default;
 
 // Layout
 $breakpoints: (
@@ -26,33 +27,6 @@ $breakpoints: (
   lg: 64em, // 1024px
   xl: 80em // 1280px
 );
-
-
-// Colors
-$white: #fff;
-$black: #000;
-$green-flat: #1bbc9b;
-$blue-flat: #3498db;
-$teal-flat: #389ebc;
-$red-flat: #e96151;
-
-
-// Brand Colors as a Sass Map
-$brand-colors: (
-	primary: $green-flat,
-	secondary: $blue-flat,
-	tertiary: $teal-flat,
-	quaternary: $red-flat,
-	quinary: $red-flat
-);
-
-
-// Brand Colors as variable declarations
-$brand-primary: map-get($brand-colors, primary);
-$brand-secondary: map-get($brand-colors, secondary);
-$brand-tertiary: map-get($brand-colors, tertiary);
-$brand-quaternary: map-get($brand-colors, quaternary);
-$brand-quinary: map-get($brand-colors, quinary);
 
 
 // Font-weights
@@ -79,15 +53,15 @@ $font-black: map-get($font-weights, black);
 
 // Theme colors
 $theme-colors: (
-	background: smoke,
-	color: #bada55,
-	font-family: Helvetica
+  background: smoke,
+  color: #bada55,
+  font-family: Helvetica
 );
 
 // Theme typography
 $theme-type: (
-	font-family: Arial,
-	font-size: $em-base
+  font-family: Arial,
+  font-size: $em-base
 );
 
 // Theme Sass map with all settings

@@ -2,13 +2,14 @@
  * Typography
  */
 html {
-	font-size: 1em;
+  // font-size: 1em;
+  font-size: ($base-font-size / 16px) * 100%;
 }
 
 body {
-	font-family: map-get($theme-settings, font-family);
-	margin: 0;
-	padding: 0;
+  font-family: map-get($theme-settings, font-family);
+  margin: 0;
+  padding: 0;
 }
 
 h1,
@@ -17,48 +18,52 @@ h3,
 h4,
 h5,
 h6 {
-	font-size: rem(24);
-	margin-bottom: 1em;
-	margin-top: 1em;
+  font-size: rem(32);
+  margin-bottom: 1em;
+  margin-top: 1em;
 }
 
-a, a:focus, a:visited {
-	color: #2980b9;
-	text-decoration: none;
-}
+a {
+  &,
+  &:focus,
+  &:visited {
+    color: #2980b9;
+    text-decoration: none;
+  }
 
-a:hover {
-	color: #3498db;
-	text-decoration: underline;
+  &:hover {
+    color: #3498db;
+    text-decoration: underline;
+  }
 }
 
 .block-links a {
-	color: #fff;
-	display: block;
+  color: #fff;
+  display: block;
 }
 
 .c-heading-page {
-	font-size: rem(24);
+  font-size: rem(24);
 }
 
 .c-heading-main {
-	font-size: rem(24);
+  font-size: rem(24);
 }
 .c-heading-sub {
-	font-size: rem(16);
+  font-size: rem(16);
 }
 
 .c-heading-banner {
-	font-size: rem(32);
+  font-size: rem(32);
 }
 
 .c-heading-section {
-	font-size: rem(18);
+  font-size: rem(18);
 }
 
 $font-directory: '../';
 $font-name: 'ProximaNova';
 $versions: 'Regular','Light','Bold','Semibold';
 // @each $version in $versions {
-// 	@include font($font-directory, $font-name+'-'+$version);
+//  @include font($font-directory, $font-name+'-'+$version);
 // }

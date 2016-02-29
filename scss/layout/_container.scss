@@ -18,14 +18,14 @@
   }
 }
 
-.container--lg {
-  max-width: map-get($breakpoints, lg);
+.container--sm {
+  max-width: map-get($breakpoints, sm);
 }
 
 .container--md {
   max-width: map-get($breakpoints, md);
 }
 
-.container--sm {
-  max-width: map-get($breakpoints, sm);
+.container--lg {
+  max-width: map-get($breakpoints, lg);
 }

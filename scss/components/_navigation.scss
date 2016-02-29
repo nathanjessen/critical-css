@@ -2,14 +2,14 @@
  * Navigation
  */
 .navigation {
-	background-color: $brand-primary;
-	padding: 20px;
+  background-color: $brand-primary;
+  padding: 20px;
 
-	@include media(">=sm", "screen") {
-		padding: 40px;
-	}
+  @include media(">=sm") {
+    padding: 40px;
+  }
 
-	@include media("print") {
-		display: none !important;
-	}
+  @include media("print") {
+    display: none !important;
+  }
 }
