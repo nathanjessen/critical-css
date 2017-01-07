@@ -1,9 +1,0 @@
-/**
- * Font weights
- */
-
-@each $weight, $font-weight in $font-weights {
-  .font-#{$weight} {
-    font-weight: $font-weight !important;
-  }
-}

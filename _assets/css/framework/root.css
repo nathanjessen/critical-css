@@ -1,0 +1,39 @@
+/** Root: CSS Variables */
+
+:root {
+  /* Fonts */
+  --font-stack-serif: Georgia, "Times New Roman", Times, serif;
+  --font-stack-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-stack: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  /* Colors */
+  --white: #fff;
+  --white-off: #efefef;
+  --gray-light: #f4f4f4;
+  --gray: #444;
+  --gray-dark: #333;
+
+  --brand-primary: #3494E6;
+  --brand-secondary: #36D7B7;
+
+  --body-bg: #fff;
+  --text-color: #000;
+  --border-color: #ddd;
+
+  /* Links */
+  --link-color: #3494E6;
+  --link-color-hover: #004e92;
+
+  /* Buttons */
+  --button-bg: #ddd;
+  --button-bg-hover: #ccc;
+  --button-color: #000;
+  --button-color-hover: #000;
+
+  /* Mark */
+  --mark-bg: #ff0;
+  --mark-color: #000;
+
+  /* Forms */
+  /* Tables */
+}
