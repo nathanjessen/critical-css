@@ -1,3 +1,4 @@
 .o-button {
-  @include button;
+  display: inline-block;
+  padding: 4px 8px;
 }
