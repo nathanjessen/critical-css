@@ -1,0 +1,19 @@
+/** Lists */
+
+.list-unstyled {
+  list-style: none;
+  padding-left: 0;
+}
+
+.list-inline {
+  list-style: none;
+  padding-left: 0;
+}
+
+.list-inline > li {
+  display: inline-block;
+
+  &:not(:last-child)::after {
+    content: " |";
+  }
+}
