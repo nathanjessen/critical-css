@@ -1,7 +1,7 @@
-# Air
+# Critical CSS
 ===
 
-Framework for dry css
+Critical CSS is a framework for better browser defaults with theming capabilities.
 
 ## Code Conventions
 

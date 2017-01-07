@@ -1,6 +1,6 @@
 {
-  "name": "css-framework",
-  "description": "The CSS Framework.",
+  "name": "critical-css",
+  "description": "Critical CSS is a framework for better browser defaults with theming capabilities.",
   "version": "0.0.1",
   "engines": {
     "node": ">=0.10.1"
