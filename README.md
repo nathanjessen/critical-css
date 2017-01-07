@@ -1,5 +1,4 @@
 # Critical CSS
-===
 
 Critical CSS is a framework for better browser defaults with theming capabilities.
 
