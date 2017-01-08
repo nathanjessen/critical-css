@@ -1,4 +1,21 @@
-/** Lists */
+/*
+@styleguide
+
+@title Lists
+
+Utility classes to control the appearance of a list element (e.g. `ul`, `ol`, `dl`).
+
+<ul class="list-unstyled">
+  <li>.list-unstyled</li>
+  <li>.list-unstyled</li>
+</ul>
+
+<ul class="list-inline">
+  <li>.list-inline</li>
+  <li>.list-inline</li>
+  <li>.list-inline</li>
+</ul>
+*/
 
 .list-unstyled {
   list-style: none;

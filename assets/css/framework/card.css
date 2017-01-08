@@ -1,4 +1,36 @@
-/** Card */
+/*
+@styleguide
+
+@title Card
+
+Set of classes to create the card design pattern.
+
+<div class="card">
+  <div class="card-heading">
+    <h1>Card</h1>
+  </div>
+  <div class="card-body">
+    <h1 class="card-title">card-title</h1>
+    <p>Sample paragraph</p>
+  </div>
+  <div class="card-footer">
+    <p>Card footer</p>
+  </div>
+</div>
+
+<div class="card card-primary">
+  <div class="card-heading">
+    <h1>Card Primary</h1>
+  </div>
+  <div class="card-body">
+    <h1 class="card-title">card-title</h1>
+    <p>Sample paragraph</p>
+  </div>
+  <div class="card-footer">
+    <p>Card footer</p>
+  </div>
+</div>
+*/
 
 .card {
   background-color: #fff;

@@ -1,4 +1,18 @@
-/** Backgrounds */
+/*
+@styleguide
+
+@title Backgrounds
+
+Use these classes on any element to apply a background color.
+
+<p class="bg-white">bg-white</p>
+<p class="bg-white-off">bg-white-off</p>
+<p class="bg-gray-light">bg-gray-light</p>
+<p class="bg-gray">bg-gray</p>
+<p class="bg-gray-dark">bg-gray-dark</p>
+<p class="bg-brand-primary">bg-brand-primary</p>
+<p class="bg-brand-secondary">bg-brand-secondary</p>
+*/
 
 .bg-white {
   background-color: var(--white);
