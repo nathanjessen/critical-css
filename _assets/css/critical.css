@@ -2,7 +2,7 @@
 
 /** Vendor Libraries */
 @import "normalize-css";
-@import "vendor/flexboxgrid.css";
+@import "flexboxgrid";
 
 /*! CSS Framework */
 @import "framework/root.css";
