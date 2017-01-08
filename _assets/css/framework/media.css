@@ -1,8 +1,12 @@
-/** Media */
+/*
+@styleguide
 
-/**
-<figure class="ratio-16-9">
-  <img src="sample.jpg" alt="Sample image">
+@title Media
+
+Use the `img` element with the optional `img-responsive` class.
+
+<figure>
+  <img src="sample.jpg" alt="Sample image" class="img-responsive">
 </figure>
 */
 
@@ -14,24 +18,4 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
-}
-
-.ratio-16-9 {
-  --media-height: 640px;
-  --media-width: 1280px;
-  /*background: #ddd url(placeholder.svg) no-repeat center center;*/
-  padding-bottom: calc(calc(var(--media-height) / var(--media-width)) * 100%);
-  position: relative;
-}
-
-.ratio-16-9 img,
-.ratio-16-9 video,
-.ratio-16-9 iframe,
-.ratio-16-9 object,
-.ratio-16-9 embed {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
 }
