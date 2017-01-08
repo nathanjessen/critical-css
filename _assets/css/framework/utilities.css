@@ -1,4 +1,15 @@
-/** Utilities */
+/*
+@styleguide
+
+@title Utilities
+
+Classes that perform common, reusable functions.
+
+<p class="text-left">text-left</p>
+<p class="text-right">text-right</p>
+<p class="text-center">text-center</p>
+<p class="text-justify">text-justify</p>
+*/
 
 .text-left {
   text-align: left !important;

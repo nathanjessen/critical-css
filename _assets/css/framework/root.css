@@ -1,12 +1,7 @@
 /** Root: CSS Variables */
 
+/* @start color */
 :root {
-  /* Fonts */
-  --font-stack-serif: Georgia, "Times New Roman", Times, serif;
-  --font-stack-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-stack: "Helvetica Neue", Helvetica, Arial, sans-serif;
-
-  /* Colors */
   --white: #fff;
   --white-off: #efefef;
   --gray-light: #f4f4f4;
@@ -15,7 +10,16 @@
 
   --brand-primary: #3494E6;
   --brand-secondary: #36D7B7;
+}
+/* @end color */
 
+:root {
+  /* Fonts */
+  --font-stack-serif: Georgia, "Times New Roman", Times, serif;
+  --font-stack-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-stack: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  /* UI Colors */
   --body-bg: #fff;
   --text-color: #000;
   --border-color: #ddd;

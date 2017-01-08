@@ -1,4 +1,23 @@
-/** Headings */
+/*
+@styleguide
+
+@title Headings
+
+Use the `h1` - `h6` elements or classes.
+
+<h1>h1</h1>
+<h2>h2</h2>
+<h3>h3</h3>
+<h4>h4</h4>
+<h5>h5</h5>
+<h6>h6</h6>
+<p class="h1">.h1</p>
+<p class="h2">.h2</p>
+<p class="h3">.h3</p>
+<p class="h4">.h4</p>
+<p class="h5">.h5</p>
+<p class="h6">.h6</p>
+*/
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
@@ -9,51 +28,32 @@ h1, h2, h3, h4, h5, h6,
   margin-bottom: 0.5rem;
 }
 
-h1, .h1 {
+h1,
+.h1 {
   font-size: 2.5rem;
 }
 
-h2, .h2 {
+h2,
+.h2 {
   font-size: 2rem;
 }
 
-h3, .h3 {
+h3,
+.h3 {
   font-size: 1.75rem;
 }
 
-h4, .h4 {
+h4,
+.h4 {
   font-size: 1.5rem;
 }
 
-h5, .h5 {
+h5,
+.h5 {
   font-size: 1.25rem;
 }
 
-h6, .h6 {
+h6,
+.h6 {
   font-size: 1rem;
-}
-
-.lead {
-  font-size: 1.25rem;
-  font-weight: 300;
-}
-
-.display-1 {
-  font-size: 6rem;
-  font-weight: 300;
-}
-
-.display-2 {
-  font-size: 5.5rem;
-  font-weight: 300;
-}
-
-.display-3 {
-  font-size: 4.5rem;
-  font-weight: 300;
-}
-
-.display-4 {
-  font-size: 3.5rem;
-  font-weight: 300;
 }
