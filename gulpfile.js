@@ -12,9 +12,9 @@ const reporter = require('postcss-reporter');
 const styleGuide = require('postcss-style-guide');
 const stylelint = require('stylelint');
 
-const siteRoot = '_site';
-const cssFiles = '_assets/css/*.css';
-const cssSourceFiles = '_assets/css/**/*.css';
+const siteRoot = 'dist';
+const cssFiles = 'assets/css/*.css';
+const cssSourceFiles = 'assets/css/**/*.css';
 
 // CSS
 gulp.task('css', function () {
@@ -33,7 +33,7 @@ gulp.task('css', function () {
     prefix('> 5%'),
     styleGuide({
       project: 'Critical CSS',
-      dest: '_site/index.html'
+      dest: 'dist/index.html'
     })
   ];
 
@@ -41,7 +41,7 @@ gulp.task('css', function () {
     .pipe(postcss(processors))
     .pipe(cssnano())
     .pipe(notify('css optimized'))
-    .pipe(gulp.dest('_site/assets/css'));
+    .pipe(gulp.dest('dist/assets/css'));
 });
 
 // BrowserSync
