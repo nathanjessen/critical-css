@@ -1,3 +1,6 @@
+const siteRoot = 'dist';
+const cssFiles = 'css/*.css';
+
 const prefix = require('autoprefixer');
 const browserSync = require('browser-sync').create();
 const mqpacker = require('css-mqpacker');
@@ -12,19 +15,13 @@ const reporter = require('postcss-reporter');
 const styleGuide = require('postcss-style-guide');
 const stylelint = require('stylelint');
 
-const siteRoot = 'dist';
-const cssFiles = 'assets/css/*.css';
-const cssSourceFiles = 'assets/css/**/*.css';
-
 // CSS
 gulp.task('css', function () {
   var processors = [
     atImport(),
     nested(),
     stylelint(),
-    immutableCss({
-      strict: true
-    }),
+    immutableCss(),
     reporter({
       clearReportedMessages: true,
       noIcon: true
@@ -33,15 +30,15 @@ gulp.task('css', function () {
     prefix('> 5%'),
     styleGuide({
       project: 'Critical CSS',
-      dest: 'dist/index.html'
+      dest: siteRoot + '/index.html'
     })
   ];
 
-  return gulp.src(cssFiles)
+  return gulp.src('css/critical.css')
     .pipe(postcss(processors))
     .pipe(cssnano())
     .pipe(notify('css optimized'))
-    .pipe(gulp.dest('dist/assets/css'));
+    .pipe(gulp.dest(siteRoot));
 });
 
 // BrowserSync
@@ -55,7 +52,7 @@ gulp.task('serve', () => {
   });
 
   // Watch
-  gulp.watch(cssSourceFiles, ['css']);
+  gulp.watch(cssFiles, ['css']);
 });
 
 // Default
