@@ -8,6 +8,9 @@ const gulp = require('gulp');
 const cssnano = require('gulp-cssnano');
 const notify = require('gulp-notify');
 const postcss = require('gulp-postcss');
+const rename = require('gulp-rename');
+const size = require('gulp-size');
+const sourcemaps = require('gulp-sourcemaps');
 const immutableCss = require('immutable-css');
 const atImport = require('postcss-import');
 const nested = require('postcss-nested');
@@ -35,8 +38,13 @@ gulp.task('css', function () {
   ];
 
   return gulp.src('css/critical.css')
+    .pipe(sourcemaps.init())
     .pipe(postcss(processors))
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest(siteRoot))
     .pipe(cssnano())
+    .pipe(size())
+    .pipe(rename({extname: '.min.css'}))
     .pipe(notify('css optimized'))
     .pipe(gulp.dest(siteRoot));
 });
