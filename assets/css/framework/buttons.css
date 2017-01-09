@@ -3,11 +3,17 @@
 
 @title Button
 
-Use the button classes on and `<a>`, `<button>`, `<input>` elements.
+Use the button classes on `<a>`, `<button>` and `<input>` elements.
 
 <button>Default Button</button>
 <button class="button-primary">Primary Button</button>
 <button class="button-secondary">Secondary Button</button>
+
+```
+<button>Default Button</button>
+<button class="button-primary">Primary Button</button>
+<button class="button-secondary">Secondary Button</button>
+```
 */
 
 button {

@@ -11,12 +11,31 @@ Use the `h1` - `h6` elements or classes.
 <h4>h4</h4>
 <h5>h5</h5>
 <h6>h6</h6>
+
+```
+<h1>h1</h1>
+<h2>h2</h2>
+<h3>h3</h3>
+<h4>h4</h4>
+<h5>h5</h5>
+<h6>h6</h6>
+```
+
 <p class="h1">.h1</p>
 <p class="h2">.h2</p>
 <p class="h3">.h3</p>
 <p class="h4">.h4</p>
 <p class="h5">.h5</p>
 <p class="h6">.h6</p>
+
+```
+<p class="h1">.h1</p>
+<p class="h2">.h2</p>
+<p class="h3">.h3</p>
+<p class="h4">.h4</p>
+<p class="h5">.h5</p>
+<p class="h6">.h6</p>
+```
 */
 
 h1, h2, h3, h4, h5, h6,

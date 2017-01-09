@@ -12,6 +12,16 @@ Use these classes on any element to apply a background color.
 <p class="bg-gray-dark">bg-gray-dark</p>
 <p class="bg-brand-primary">bg-brand-primary</p>
 <p class="bg-brand-secondary">bg-brand-secondary</p>
+
+```
+<p class="bg-white"></p>
+<p class="bg-white-off"></p>
+<p class="bg-gray-light"></p>
+<p class="bg-gray"></p>
+<p class="bg-gray-dark"></p>
+<p class="bg-brand-primary"></p>
+<p class="bg-brand-secondary"></p>
+```
 */
 
 .bg-white {

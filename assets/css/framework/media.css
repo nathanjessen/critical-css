@@ -8,6 +8,10 @@ Use the `img` element with the optional `img-responsive` class.
 <figure>
   <img src="sample.jpg" alt="Sample image" class="img-responsive">
 </figure>
+
+```
+<img src="sample.jpg" alt="Sample image" class="img-responsive">
+```
 */
 
 img {
