@@ -1,5 +1,5 @@
 const siteRoot = 'dist';
-const cssFiles = 'css/*.css';
+const cssFiles = ['critical.css', 'css/*.css'];
 
 const prefix = require('autoprefixer');
 const browserSync = require('browser-sync').create();
@@ -37,7 +37,7 @@ gulp.task('css', function () {
     })
   ];
 
-  return gulp.src('css/critical.css')
+  return gulp.src('critical.css')
     .pipe(sourcemaps.init())
     .pipe(postcss(processors))
     .pipe(sourcemaps.write())

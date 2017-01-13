@@ -32,11 +32,11 @@ button {
 }
 
 .button-primary {
-  --button-bg: var(--brand-primary);
+  --button-bg: var(--theme-primary);
   --button-bg-hover: #08f;
 }
 
 .button-secondary {
-  --button-bg: var(--brand-secondary);
+  --button-bg: var(--theme-secondary);
   --button-bg-hover: #c0c;
 }

@@ -7,9 +7,8 @@
   --gray-light: #f4f4f4;
   --gray: #444;
   --gray-dark: #333;
-
-  --brand-primary: #3494E6;
-  --brand-secondary: #36D7B7;
+  --theme-primary: #3494e6;
+  --theme-secondary: #36d7b7;
 }
 /* @end color */
 
