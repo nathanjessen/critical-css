@@ -1,0 +1,42 @@
+/*
+@styleguide
+
+@title Button
+
+Use the button classes on `<a>`, `<button>` and `<input>` elements.
+
+<button>Default Button</button>
+<button class="button-primary">Primary Button</button>
+<button class="button-secondary">Secondary Button</button>
+
+```
+<button>Default Button</button>
+<button class="button-primary">Primary Button</button>
+<button class="button-secondary">Secondary Button</button>
+```
+*/
+
+button {
+  border: 1px solid var(--button-bg);
+  background-color: var(--button-bg);
+  color: var(--button-color);
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0.5em 1em;
+
+  &:hover {
+    background-color: var(--button-bg-hover);
+    border-color: var(--button-bg-hover);
+    color: var(--button-color-hover);
+  }
+}
+
+.button-primary {
+  --button-bg: var(--theme-primary);
+  --button-bg-hover: #08f;
+}
+
+.button-secondary {
+  --button-bg: var(--theme-secondary);
+  --button-bg-hover: #c0c;
+}

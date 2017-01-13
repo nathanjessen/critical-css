@@ -1,4 +1,16 @@
-/** Links */
+/*
+@styleguide
+
+@title Links
+
+Use the `a` element.
+
+<a href="#">link</a>
+
+```
+<a href="#">link</a>
+```
+*/
 
 a {
   background-color: transparent;

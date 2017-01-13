@@ -1,46 +1,52 @@
+const siteRoot = 'dist';
+const cssFiles = ['critical.css', 'css/*.css'];
+
+const prefix = require('autoprefixer');
 const browserSync = require('browser-sync').create();
-const atImport = require('postcss-import');
-const nested = require('postcss-nested');
 const mqpacker = require('css-mqpacker');
 const gulp = require('gulp');
-const prefix = require('autoprefixer');
 const cssnano = require('gulp-cssnano');
-const inlinesource = require('gulp-inline-source');
 const notify = require('gulp-notify');
 const postcss = require('gulp-postcss');
-
-const siteRoot = '_site';
-const cssFiles = '_assets/css/*.css';
-const cssSourceFiles = '_assets/css/**/*.css';
-const htmlFiles = '_pages/**/*.html';
-const siteHtmlFiles = '_site/**/*.html';
+const rename = require('gulp-rename');
+const size = require('gulp-size');
+const sourcemaps = require('gulp-sourcemaps');
+const immutableCss = require('immutable-css');
+const atImport = require('postcss-import');
+const nested = require('postcss-nested');
+const reporter = require('postcss-reporter');
+const styleGuide = require('postcss-style-guide');
+const stylelint = require('stylelint');
 
 // CSS
 gulp.task('css', function () {
   var processors = [
     atImport(),
     nested(),
+    stylelint(),
+    immutableCss(),
+    reporter({
+      clearReportedMessages: true,
+      noIcon: true
+    }),
     mqpacker(),
-    prefix('> 5%')
+    prefix('> 5%'),
+    styleGuide({
+      project: 'Critical CSS',
+      dest: siteRoot + '/index.html'
+    })
   ];
-  return gulp.src(cssFiles)
+
+  return gulp.src('critical.css')
+    .pipe(sourcemaps.init())
     .pipe(postcss(processors))
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest(siteRoot))
     .pipe(cssnano())
+    .pipe(size())
+    .pipe(rename({extname: '.min.css'}))
     .pipe(notify('css optimized'))
-    .pipe(gulp.dest('_site/assets/css'));
-});
-
-// HTML
-gulp.task('html', function () {
-  return gulp.src(htmlFiles)
-    .pipe(gulp.dest('_site'));
-});
-
-// Inline the CSS
-gulp.task('inlinesource', ['css', 'html'], function () {
-  return gulp.src(siteHtmlFiles)
-    .pipe(inlinesource())
-    .pipe(gulp.dest('_site'));
+    .pipe(gulp.dest(siteRoot));
 });
 
 // BrowserSync
@@ -54,9 +60,8 @@ gulp.task('serve', () => {
   });
 
   // Watch
-  gulp.watch(cssSourceFiles, ['inlinesource']);
-  gulp.watch(htmlFiles, ['inlinesource']);
+  gulp.watch(cssFiles, ['css']);
 });
 
 // Default
-gulp.task('default', ['css', 'html', 'inlinesource', 'serve']);
+gulp.task('default', ['css', 'serve']);

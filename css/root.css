@@ -1,21 +1,24 @@
 /** Root: CSS Variables */
 
+/* @start color */
+:root {
+  --white: #fff;
+  --white-off: #efefef;
+  --gray-light: #f4f4f4;
+  --gray: #444;
+  --gray-dark: #333;
+  --theme-primary: #3494e6;
+  --theme-secondary: #36d7b7;
+}
+/* @end color */
+
 :root {
   /* Fonts */
   --font-stack-serif: Georgia, "Times New Roman", Times, serif;
   --font-stack-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-stack: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
-  /* Colors */
-  --white: #fff;
-  --white-off: #efefef;
-  --gray-light: #f4f4f4;
-  --gray: #444;
-  --gray-dark: #333;
-
-  --brand-primary: #3494E6;
-  --brand-secondary: #36D7B7;
-
+  /* UI Colors */
   --body-bg: #fff;
   --text-color: #000;
   --border-color: #ddd;
