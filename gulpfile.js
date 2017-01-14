@@ -1,7 +1,7 @@
 const siteRoot = 'dist';
-const cssFiles = ['critical.css', 'css/*.css'];
+const projectName = 'Critical CSS';
+const cssFiles = ['index.css', 'lib/*.css'];
 
-const prefix = require('autoprefixer');
 const browserSync = require('browser-sync').create();
 const mqpacker = require('css-mqpacker');
 const gulp = require('gulp');
@@ -12,8 +12,12 @@ const rename = require('gulp-rename');
 const size = require('gulp-size');
 const sourcemaps = require('gulp-sourcemaps');
 const immutableCss = require('immutable-css');
+const atVariables = require('postcss-at-rules-variables');
+const atIf = require('postcss-conditionals');
+const cssnext = require('postcss-cssnext');
+const cssEach = require('postcss-each');
+const atFor = require('postcss-for');
 const atImport = require('postcss-import');
-const nested = require('postcss-nested');
 const reporter = require('postcss-reporter');
 const styleGuide = require('postcss-style-guide');
 const stylelint = require('stylelint');
@@ -22,22 +26,29 @@ const stylelint = require('stylelint');
 gulp.task('css', function () {
   var processors = [
     atImport(),
-    nested(),
     stylelint(),
     immutableCss(),
     reporter({
       clearReportedMessages: true,
       noIcon: true
     }),
+    atVariables(),
+    atFor(),
+    cssEach(),
+    atIf(),
+    cssnext({
+      browsers: ['last 2 versions', '> 5%', 'not ie < 11']
+    }),
     mqpacker(),
-    prefix('> 5%'),
     styleGuide({
-      project: 'Critical CSS',
-      dest: siteRoot + '/index.html'
+      dest: siteRoot + '/index.html',
+      project: projectName,
+      showCode: true,
+      theme: 'ideal'
     })
   ];
 
-  return gulp.src('critical.css')
+  return gulp.src('index.css')
     .pipe(sourcemaps.init())
     .pipe(postcss(processors))
     .pipe(sourcemaps.write())
