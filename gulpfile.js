@@ -3,7 +3,6 @@ const projectName = 'Critical CSS';
 const cssFiles = ['index.css', 'lib/*.css'];
 
 const browserSync = require('browser-sync').create();
-const mqpacker = require('css-mqpacker');
 const gulp = require('gulp');
 const cssnano = require('gulp-cssnano');
 const notify = require('gulp-notify');
@@ -39,7 +38,6 @@ gulp.task('css', function () {
     cssnext({
       browsers: ['last 2 versions', '> 5%', 'not ie < 11']
     }),
-    mqpacker(),
     styleGuide({
       dest: siteRoot + '/index.html',
       project: projectName,

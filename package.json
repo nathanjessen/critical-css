@@ -14,7 +14,6 @@
   },
   "devDependencies": {
     "browser-sync": "^2.18.5",
-    "css-mqpacker": "^5.0.1",
     "gulp": "^3.9.1",
     "gulp-cssnano": "^2.1.2",
     "gulp-notify": "^2.2.0",
