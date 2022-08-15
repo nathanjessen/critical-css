@@ -14,9 +14,9 @@
 
 :root {
   /* Fonts */
-  --font-stack-serif: Georgia, "Times New Roman", Times, serif;
-  --font-stack-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-stack: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-stack-serif: Georgia, 'Times New Roman', Times, serif;
+  --font-stack-sans-serif: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-stack: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
   /* UI Colors */
   --body-bg: #fff;
@@ -24,7 +24,7 @@
   --border-color: #ddd;
 
   /* Links */
-  --link-color: #3494E6;
+  --link-color: #3494e6;
   --link-color-hover: #004e92;
 
   /* Buttons */

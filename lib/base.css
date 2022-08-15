@@ -4,7 +4,8 @@
   width: device-width;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -127,24 +128,24 @@ select {
 }
 
 button,
-html [type="button"],
-[type="reset"],
-[type="submit"] {
+html [type='button'],
+[type='reset'],
+[type='submit'] {
   -webkit-appearance: button;
 }
 
 button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
+[type='button']::-moz-focus-inner,
+[type='reset']::-moz-focus-inner,
+[type='submit']::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
 
 button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
+[type='button']:-moz-focusring,
+[type='reset']:-moz-focusring,
+[type='submit']:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
@@ -166,7 +167,7 @@ legend {
   font-size: 1.5rem;
   line-height: inherit;
   max-width: 100%;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   padding: 0;
   white-space: normal;
   width: 100%;
@@ -177,24 +178,24 @@ textarea {
   resize: vertical;
 }
 
-[type="checkbox"],
-[type="radio"] {
+[type='checkbox'],
+[type='radio'] {
   box-sizing: border-box;
   padding: 0;
 }
 
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
+[type='number']::-webkit-inner-spin-button,
+[type='number']::-webkit-outer-spin-button {
   height: auto;
 }
 
-[type="search"] {
+[type='search'] {
   -webkit-appearance: textfield;
   outline-offset: -2px;
 }
 
-[type="search"]::-webkit-search-cancel-button,
-[type="search"]::-webkit-search-decoration {
+[type='search']::-webkit-search-cancel-button,
+[type='search']::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -208,7 +209,7 @@ textarea {
   font: inherit;
 }
 
-[tabindex="-1"]:focus {
+[tabindex='-1']:focus {
   outline: none !important;
 }
 
@@ -242,7 +243,7 @@ dt {
 }
 
 dd {
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   margin-left: 0;
 }
 
@@ -256,14 +257,14 @@ pre {
   overflow: auto;
 }
 
-[role="button"] {
+[role='button'] {
   cursor: pointer;
 }
 
 a,
 area,
 button,
-[role="button"],
+[role='button'],
 input,
 label,
 select,
@@ -293,7 +294,7 @@ th {
 
 label {
   display: inline-block;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 button:focus {
@@ -308,19 +309,19 @@ textarea {
   line-height: inherit;
 }
 
-input[type="radio"]:disabled,
-input[type="checkbox"]:disabled {
+input[type='radio']:disabled,
+input[type='checkbox']:disabled {
   cursor: not-allowed;
 }
 
-input[type="date"],
-input[type="time"],
-input[type="datetime-local"],
-input[type="month"] {
+input[type='date'],
+input[type='time'],
+input[type='datetime-local'],
+input[type='month'] {
   -webkit-appearance: listbox;
 }
 
-input[type="search"] {
+input[type='search'] {
   -webkit-appearance: none;
 }
 
@@ -351,7 +352,7 @@ output {
   }
 
   abbr[title]::after {
-    content: " (" attr(title) ")";
+    content: ' (' attr(title) ')';
   }
 
   pre {

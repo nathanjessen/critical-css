@@ -1,7 +1,5 @@
 # Critical CSS
 
-**Under development**
-
 Critical CSS is a framework which sets sensible defaults and leverages CSS Custom Variables for theming.
 
 ## Getting Started
@@ -16,8 +14,8 @@ The latest and greatest (and IE11+). Browsers should support flexbox and CSS Cus
 
 ## Code Conventions
 
-* [CSS Styleguide](https://github.com/nathanjessen/css)
-* [Naming UI components in OOCSS](http://csswizardry.com/2014/03/naming-ui-components-in-oocss/)
+- [CSS Styleguide](https://github.com/nathanjessen/css)
+- [Naming UI components in OOCSS](http://csswizardry.com/2014/03/naming-ui-components-in-oocss/)
 
 ## Issues
 

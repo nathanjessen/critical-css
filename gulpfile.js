@@ -29,31 +29,32 @@ gulp.task('css', function () {
     immutableCss(),
     reporter({
       clearReportedMessages: true,
-      noIcon: true
+      noIcon: true,
     }),
     atVariables(),
     atFor(),
     cssEach(),
     atIf(),
     cssnext({
-      browsers: ['last 2 versions', '> 5%', 'not ie < 11']
+      browsers: ['last 2 versions', '> 5%', 'not ie < 11'],
     }),
     styleGuide({
       dest: siteRoot + '/index.html',
       project: projectName,
       showCode: true,
-      theme: 'ideal'
-    })
+      theme: 'ideal',
+    }),
   ];
 
-  return gulp.src('index.css')
+  return gulp
+    .src('index.css')
     .pipe(sourcemaps.init())
     .pipe(postcss(processors))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(siteRoot))
     .pipe(cssnano())
     .pipe(size())
-    .pipe(rename({extname: '.min.css'}))
+    .pipe(rename({ extname: '.min.css' }))
     .pipe(notify('css optimized'))
     .pipe(gulp.dest(siteRoot));
 });
@@ -64,8 +65,8 @@ gulp.task('serve', () => {
     files: [siteRoot + '/**'],
     port: 4000,
     server: {
-      baseDir: siteRoot
-    }
+      baseDir: siteRoot,
+    },
   });
 
   // Watch
