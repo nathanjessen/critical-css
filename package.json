@@ -1,7 +1,7 @@
 {
   "name": "critical-css",
   "description": "Critical CSS is a framework for better browser defaults with theming capabilities.",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "repository": {
     "type": "git",
     "url": "https://nathanjessen@github.com/nathanjessen/critical-css.git"
