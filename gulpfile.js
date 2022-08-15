@@ -42,7 +42,7 @@ gulp.task('css', function () {
       dest: siteRoot + '/index.html',
       project: projectName,
       showCode: true,
-      theme: 'ideal',
+      theme: 'default',
     }),
   ];
 
@@ -70,8 +70,8 @@ gulp.task('serve', () => {
   });
 
   // Watch
-  gulp.watch(cssFiles, ['css']);
+  gulp.watch(cssFiles, gulp.parallel('css'));
 });
 
 // Default
-gulp.task('default', ['css', 'serve']);
+gulp.task('default', gulp.series('css', 'serve'));
