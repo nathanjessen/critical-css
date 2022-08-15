@@ -1,4 +1,4 @@
-const siteRoot = 'dist';
+const siteRoot = 'docs';
 const projectName = 'Critical CSS';
 const cssFiles = ['index.css', 'lib/*.css'];
 
