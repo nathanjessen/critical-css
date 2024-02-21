@@ -13,7 +13,7 @@
     "refresh": "rm -fr node_modules && npm install"
   },
   "devDependencies": {
-    "browser-sync": "^2.29.1",
+    "browser-sync": "^3.0.2",
     "gulp": "^4.0.2",
     "gulp-cssnano": "^2.1.3",
     "gulp-notify": "^4.0.0",
