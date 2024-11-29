@@ -14,18 +14,11 @@ Use the `a` element.
 
 a {
   background-color: transparent;
-  -webkit-text-decoration-skip: objects;
-}
-
-a:active,
-a:hover {
-  outline-width: 0;
-}
-
-a {
   color: var(--link-color);
   text-decoration: var(--link-decoration, none);
+  text-decoration-skip-ink: auto;
   transition: all 0.5s;
+  outline-width: 0;
 
   &:focus,
   &:hover {
@@ -37,19 +30,41 @@ a {
     outline: 5px auto -webkit-focus-ring-color;
     outline-offset: -2px;
   }
+}
 
-  &:not([href]):not([tabindex]) {
+/* Links without href attribute */
+a:not([href]) {
+  color: inherit;
+  text-decoration: none;
+
+  &:focus,
+  &:hover {
     color: inherit;
     text-decoration: none;
   }
 
-  &:not([href]):not([tabindex]):focus,
-  &:not([href]):not([tabindex]):hover {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  &:not([href]):not([tabindex]):focus {
+  &:focus {
     outline: none;
   }
+}
+
+/* Links without tabindex attribute */
+a:not([tabindex]) {
+  color: inherit;
+  text-decoration: none;
+
+  &:focus,
+  &:hover {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+a:active,
+a:hover {
+  outline-width: 0;
 }

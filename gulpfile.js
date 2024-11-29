@@ -1,77 +1,80 @@
+import browserSync from 'browser-sync';
+import gulp from 'gulp';
+import cssnano from 'cssnano';
+import notify from 'gulp-notify';
+import postcss from 'gulp-postcss';
+import rename from 'gulp-rename';
+import size from 'gulp-size';
+import atVariables from 'postcss-at-rules-variables';
+import atImport from 'postcss-import';
+import reporter from 'postcss-reporter';
+import stylelint from 'stylelint';
+import postcssPresentEnv from 'postcss-preset-env';
+import postcssNesting from 'postcss-nesting';
+import postcssCustomProperties from 'postcss-custom-properties';
+import postcssEach from 'postcss-each';
+
 const siteRoot = 'docs';
-const projectName = 'Critical CSS';
 const cssFiles = ['index.css', 'lib/*.css'];
+const bs = browserSync.create();
 
-const browserSync = require('browser-sync').create();
-const gulp = require('gulp');
-const cssnano = require('gulp-cssnano');
-const notify = require('gulp-notify');
-const postcss = require('gulp-postcss');
-const rename = require('gulp-rename');
-const size = require('gulp-size');
-const sourcemaps = require('gulp-sourcemaps');
-const immutableCss = require('immutable-css');
-const atVariables = require('postcss-at-rules-variables');
-const atIf = require('postcss-conditionals');
-const cssnext = require('postcss-cssnext');
-const cssEach = require('postcss-each');
-const atFor = require('postcss-for');
-const atImport = require('postcss-import');
-const reporter = require('postcss-reporter');
-const styleGuide = require('postcss-style-guide');
-const stylelint = require('stylelint');
-
-// CSS
-gulp.task('css', function () {
-  var processors = [
+// CSS processing
+function css() {
+  const processors = [
     atImport(),
     stylelint(),
-    immutableCss(),
-    reporter({
-      clearReportedMessages: true,
-      noIcon: true,
-    }),
+    reporter({ clearReportedMessages: true, noIcon: true }),
     atVariables(),
-    atFor(),
-    cssEach(),
-    atIf(),
-    cssnext({
+    postcssEach(),
+    postcssNesting(),
+    postcssCustomProperties(),
+    postcssPresentEnv({
       browsers: ['last 2 versions', '> 5%', 'not ie < 11'],
+      features: {
+        'nesting-rules': true,
+        'custom-properties': true,
+        'custom-media-queries': true,
+      },
     }),
-    styleGuide({
-      dest: siteRoot + '/index.html',
-      project: projectName,
-      showCode: true,
-      theme: 'default',
-    }),
+    cssnano(),
   ];
 
-  return gulp
-    .src('index.css')
-    .pipe(sourcemaps.init())
+  return gulp.src('index.css')
     .pipe(postcss(processors))
-    .pipe(sourcemaps.write())
-    .pipe(gulp.dest(siteRoot))
-    .pipe(cssnano())
+    .on('error', function(err) {
+      notify.onError({
+        title: "CSS Error",
+        message: "Error: <%= error.message %>"
+      })(err);
+      this.emit('end');
+    })
     .pipe(size())
     .pipe(rename({ extname: '.min.css' }))
     .pipe(notify('css optimized'))
-    .pipe(gulp.dest(siteRoot));
-});
+    .pipe(gulp.dest(siteRoot))
+    .pipe(bs.stream());
+}
 
-// BrowserSync
-gulp.task('serve', () => {
-  browserSync.init({
+// Development server
+function serve(done) {
+  bs.init({
     files: [siteRoot + '/**'],
     port: 4000,
     server: {
       baseDir: siteRoot,
     },
-  });
+  }, done);
+}
 
-  // Watch
-  gulp.watch(cssFiles, gulp.parallel('css'));
-});
+// Watch task
+function watchFiles(done) {
+  gulp.watch(cssFiles, css).on('error', done);
+  done();
+}
 
-// Default
-gulp.task('default', gulp.series('css', 'serve'));
+// Build task
+const build = gulp.series(css);
+gulp.task('build', build);
+
+// Default task
+gulp.task('default', gulp.series(css, gulp.parallel(serve, watchFiles)));

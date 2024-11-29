@@ -1,0 +1,25 @@
+{
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "property-no-vendor-prefix": null,
+    "selector-no-vendor-prefix": null,
+    "value-no-vendor-prefix": null,
+    "at-rule-no-vendor-prefix": null,
+    "number-max-precision": null,
+    "selector-not-notation": null,
+    "media-feature-range-notation": null,
+    "no-descending-specificity": null,
+    "no-duplicate-selectors": null,
+    "font-family-no-duplicate-names": null,
+    "declaration-block-no-redundant-longhand-properties": null,
+    "comment-empty-line-before": "always",
+    "rule-empty-line-before": ["always", {
+      "ignore": ["after-comment", "inside-block"]
+    }]
+  },
+  "ignoreFiles": [
+    "node_modules/**/*",
+    "docs/**/*",
+    "dist/**/*"
+  ]
+}
