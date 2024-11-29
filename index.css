@@ -1,8 +1,8 @@
 @charset "UTF-8";
 
 /** Vendor Libraries */
-@import 'normalize-css';
-@import 'flexboxgrid';
+@import 'normalize.css/normalize.css';
+@import 'flexboxgrid/dist/flexboxgrid.css';
 
 /*! CSS Framework */
 @import './lib/root.css';

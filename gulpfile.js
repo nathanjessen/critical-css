@@ -1,33 +1,29 @@
+import browserSync from 'browser-sync';
+import gulp from 'gulp';
+import cssnano from 'cssnano';
+import notify from 'gulp-notify';
+import postcss from 'gulp-postcss';
+import rename from 'gulp-rename';
+import size from 'gulp-size';
+import atVariables from 'postcss-at-rules-variables';
+import atImport from 'postcss-import';
+import reporter from 'postcss-reporter';
+import stylelint from 'stylelint';
+import postcssPresentEnv from 'postcss-preset-env';
+import postcssNesting from 'postcss-nesting';
+import postcssCustomProperties from 'postcss-custom-properties';
+import postcssEach from 'postcss-each';
+
 const siteRoot = 'docs';
-const projectName = 'Critical CSS';
 const cssFiles = ['index.css', 'lib/*.css'];
+const bs = browserSync.create();
 
-const browserSync = require('browser-sync').create();
-const gulp = require('gulp');
-const cssnano = require('cssnano');
-const notify = require('gulp-notify');
-const postcss = require('gulp-postcss');
-const rename = require('gulp-rename');
-const size = require('gulp-size');
-const sourcemaps = require('gulp-sourcemaps');
-const atVariables = require('postcss-at-rules-variables');
-const atImport = require('postcss-import');
-const reporter = require('postcss-reporter');
-const stylelint = require('stylelint');
-const postcssPresentEnv = require('postcss-preset-env');
-const postcssNesting = require('postcss-nesting');
-const postcssCustomProperties = require('postcss-custom-properties');
-const postcssEach = require('postcss-each');
-
-// CSS
-gulp.task('css', function () {
-  var processors = [
+// CSS processing
+function css() {
+  const processors = [
     atImport(),
     stylelint(),
-    reporter({
-      clearReportedMessages: true,
-      noIcon: true,
-    }),
+    reporter({ clearReportedMessages: true, noIcon: true }),
     atVariables(),
     postcssEach(),
     postcssNesting(),
@@ -43,31 +39,42 @@ gulp.task('css', function () {
     cssnano(),
   ];
 
-  return gulp
-    .src('index.css')
-    .pipe(sourcemaps.init())
+  return gulp.src('index.css')
     .pipe(postcss(processors))
-    .pipe(sourcemaps.write())
+    .on('error', function(err) {
+      notify.onError({
+        title: "CSS Error",
+        message: "Error: <%= error.message %>"
+      })(err);
+      this.emit('end');
+    })
     .pipe(size())
     .pipe(rename({ extname: '.min.css' }))
     .pipe(notify('css optimized'))
     .pipe(gulp.dest(siteRoot))
-    .pipe(browserSync.stream());
-});
+    .pipe(bs.stream());
+}
 
-// BrowserSync
-gulp.task('serve', () => {
-  browserSync.init({
+// Development server
+function serve(done) {
+  bs.init({
     files: [siteRoot + '/**'],
     port: 4000,
     server: {
       baseDir: siteRoot,
     },
-  });
+  }, done);
+}
 
-  // Watch
-  gulp.watch(cssFiles, gulp.series('css'));
-});
+// Watch task
+function watchFiles(done) {
+  gulp.watch(cssFiles, css).on('error', done);
+  done();
+}
 
-// Default
-gulp.task('default', gulp.series('css', 'serve'));
+// Build task
+const build = gulp.series(css);
+gulp.task('build', build);
+
+// Default task
+gulp.task('default', gulp.series(css, gulp.parallel(serve, watchFiles)));

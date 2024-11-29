@@ -1,7 +1,7 @@
 /** Root: CSS Variables */
-
-/* @start color */
 :root {
+
+  /* Colors */
   --white: #fff;
   --white-off: #efefef;
   --gray-light: #f4f4f4;
@@ -9,14 +9,11 @@
   --gray-dark: #333;
   --theme-primary: #3494e6;
   --theme-secondary: #36d7b7;
-}
-/* @end color */
 
-:root {
   /* Fonts */
-  --font-stack-serif: Georgia, 'Times New Roman', Times, serif;
-  --font-stack-sans-serif: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --font-stack: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-stack-serif: 'Georgia', 'Times New Roman', 'Times', serif;
+  --font-stack-sans-serif: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  --font-stack: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 
   /* UI Colors */
   --body-bg: #fff;
@@ -36,7 +33,4 @@
   /* Mark */
   --mark-bg: #ff0;
   --mark-color: #000;
-
-  /* Forms */
-  /* Tables */
 }
